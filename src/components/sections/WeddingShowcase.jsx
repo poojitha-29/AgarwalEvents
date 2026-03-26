@@ -8,12 +8,12 @@ const weddingService = ALL_SERVICES.find((s) => s.slug === 'weddings');
 const FEATURED_FUNCTIONS = weddingService.subTypes.slice(0, 6);
 
 const IMAGES = [
-  'https://plus.unsplash.com/premium_photo-1661862397518-8e50332b6e97',
-  'https://images.unsplash.com/photo-1639078007551-b14a57d62c8d',
-  'https://plus.unsplash.com/premium_photo-1670524465634-93cf255ffa8b',
-  'https://images.unsplash.com/photo-1758939560877-53fa3590a582',
-  'https://images.unsplash.com/photo-1702205453855-48dbef2a16d5',
-  'https://images.unsplash.com/photo-1595407753234-0882f1e77954',
+  'https://images.unsplash.com/photo-1610173827043-9db50e0d8ef9',
+  'https://plus.unsplash.com/premium_photo-1661759013744-4754d402459d',
+  'https://images.unsplash.com/photo-1518370265276-f22b706aeac8',
+  'https://images.unsplash.com/photo-1740511365551-3c8130ef2a62',
+  'https://images.unsplash.com/photo-1610085927744-7217728267a6',
+  'https://images.unsplash.com/photo-1708606811579-23b18fc48007',
 ];
 
 export function WeddingShowcase() {
