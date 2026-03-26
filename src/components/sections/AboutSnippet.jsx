@@ -4,7 +4,7 @@ import { FadeInUp } from '../ui/FadeInUp';
 import { Button } from '../ui/Button';
 
 const IMAGES = [
-  'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80',
+  'https://images.unsplash.com/photo-1680491026542-a99730a0e235',
   'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&q=80',
 ];
 

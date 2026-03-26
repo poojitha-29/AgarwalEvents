@@ -68,30 +68,6 @@ export const ALL_SERVICES = [
     description: 'From intimate ceremonies to grand celebrations, we plan and execute every wedding function with perfection — handling décor, catering, entertainment, and coordination end-to-end.',
     subTypes: [
       {
-        name: 'Mehendi Ceremony',
-        services: ['Mehendi artists (bridal and guest services)', 'Thematic décor (bohemian, colorful setups)', 'Lounge seating arrangements', 'Live music or dhol', 'Catering and refreshments', 'Bridal seating stage', 'Photography and videography'],
-      },
-      {
-        name: 'Roka Ceremony',
-        services: ['Venue setup (home or banquet)', 'Traditional décor and floral arrangements', 'Ritual setup and materials', 'Catering services', 'Photography and videography', 'Guest management', 'Music and lighting arrangements'],
-      },
-      {
-        name: 'Haldi Ceremony',
-        services: ['Theme décor (yellow/marigold-based)', 'Haldi setup and ritual materials', 'Floral jewelry for bride and groom', 'Music and dhol arrangements', 'Water and floral play arrangements', 'Photography and videography'],
-      },
-      {
-        name: 'Sangeet / Engagement (Sagai)',
-        services: ['Stage design and production', 'LED walls, lighting, and sound systems', 'Choreography and dance rehearsals', 'Artist management (DJ, host, performers)', 'Entry planning for couple and family', 'Catering and bar services', 'Photography and videography'],
-      },
-      {
-        name: 'Baraat',
-        services: ['Band, dhol, and DJ arrangements', 'Ghodi or luxury vehicle booking', 'Baraat props (umbrellas, LED items)', 'Groom entry planning', 'Fireworks (subject to permissions)', 'Crowd and procession management'],
-      },
-      {
-        name: 'Reception',
-        services: ['Stage and backdrop design', 'Elegant décor themes', 'Live entertainment (band/DJ)', 'Catering (premium menu)', 'Guest welcome and management', 'Photography and videography'],
-      },
-      {
         name: 'Bridal Shower',
         services: ['Concept and theme planning', 'Venue selection and booking', 'Décor design (balloons, floral arrangements, backdrops)', 'Game and activity planning', 'Bridal entry styling', 'Customized hampers and return gifts', 'Catering (high tea / brunch)', 'Photography and videography', 'Guest coordination'],
       },
@@ -99,7 +75,10 @@ export const ALL_SERVICES = [
         name: 'Bachelorette Party',
         services: ['Destination or local venue planning', 'Travel and accommodation arrangements', 'Club/lounge reservations', 'Theme décor and props', 'DJ or live music', 'Entertainment and games', 'Customized merchandise (sashes, T-shirts)', 'Food and bar services', 'Photography and videography'],
       },
-    
+      {
+        name: 'Roka Ceremony',
+        services: ['Venue setup (home or banquet)', 'Traditional décor and floral arrangements', 'Ritual setup and materials', 'Catering services', 'Photography and videography', 'Guest management', 'Music and lighting arrangements'],
+      },
       {
         name: 'Patrika Lekhan',
         services: ['Priest (Pandit) arrangement', 'Ritual setup and samagri', 'Traditional décor (rangoli, flowers)', 'Invitation design and printing coordination', 'Photography (optional)'],
@@ -108,21 +87,34 @@ export const ALL_SERVICES = [
         name: 'Vinayak Bhoj',
         services: ['Religious ceremony setup (Ganesh Pooja)', 'Seating and dining arrangements', 'Catering (satvik menu)', 'Traditional décor', 'Guest hospitality'],
       },
+      
       {
         name: 'Chaak Ceremony',
         services: ['Cultural and traditional décor', 'Ritual setup and coordination', 'Folk music or dhol arrangements', 'Catering (regional cuisine)', 'Photography and videography'],
       },
      
       {
+        name: 'Mehendi Ceremony',
+        services: ['Mehendi artists (bridal and guest services)', 'Thematic décor (bohemian, colorful setups)', 'Lounge seating arrangements', 'Live music or dhol', 'Catering and refreshments', 'Bridal seating stage', 'Photography and videography'],
+      },
+      
+      {
         name: 'Mehendi Carnival',
         services: ['Carnival-style décor and setup', 'Food stalls and live counters', 'Game booths and entertainment', 'Live performers (magicians, dancers, artists)', 'DJ and sound setup', 'Photo booths and interactive elements'],
       },
-     
+      
+      {
+        name: 'Haldi Ceremony',
+        services: ['Theme décor (yellow/marigold-based)', 'Haldi setup and ritual materials', 'Floral jewelry for bride and groom', 'Music and dhol arrangements', 'Water and floral play arrangements', 'Photography and videography'],
+      },
       {
         name: 'Phoolon Ki Holi',
         services: ['Floral décor and setup', 'Flower petal arrangements and sourcing', 'Petal showers and props', 'Live music and dhol', 'Photography and videography'],
       },
-      
+      {
+        name: 'Sangeet / Engagement (Sagai)',
+        services: ['Stage design and production', 'LED walls, lighting, and sound systems', 'Choreography and dance rehearsals', 'Artist management (DJ, host, performers)', 'Entry planning for couple and family', 'Catering and bar services', 'Photography and videography'],
+      },
       {
         name: 'Pool Party',
         services: ['Poolside décor (tropical themes)', 'Safety and supervision arrangements', 'Props and pool accessories', 'DJ and sound system', 'Catering and bar setup', 'Changing and lounge facilities'],
@@ -131,10 +123,7 @@ export const ALL_SERVICES = [
         name: 'Cocktail Party',
         services: ['Bar setup with bartenders/mixologists', 'Premium glassware and service staff', 'Lounge seating arrangements', 'DJ or live band', 'Lighting and ambience design', 'Catering (finger food and starters)', 'Entry styling and guest handling'],
       },
-      {
-        name: 'Ganga Aarti',
-        services: ['Priest and ritual coordination', 'Venue setup (riverfront or themed setup)', 'Diyas, flowers, and décor', 'Sound system for chants', 'Guest seating arrangements', 'Photography and videography'],
-      },
+      
       {
         name: 'Mayra / Mamera',
         services: ['Traditional décor and setup', 'Gift arrangement and display', 'Ritual coordination', 'Folk music or dhol', 'Catering services', 'Photography and videography'],
@@ -143,10 +132,17 @@ export const ALL_SERVICES = [
         name: 'Tilak Ceremony',
         services: ['Ritual setup and materials', 'Groom welcome arrangements', 'Gift and token management', 'Catering services', 'Photography and videography'],
       },
-     
+      {
+        name: 'Baraat',
+        services: ['Band, dhol, and DJ arrangements', 'Ghodi or luxury vehicle booking', 'Baraat props (umbrellas, LED items)', 'Groom entry planning', 'Fireworks (subject to permissions)', 'Crowd and procession management'],
+      },
       {
         name: 'Shaadi (Wedding Ceremony)',
         services: ['Mandap design and décor', 'Priest and ritual coordination', 'Seating arrangements', 'Bridal and groom entry planning', 'Lighting and sound systems', 'Catering (multi-cuisine)', 'Guest hospitality and management', 'Photography and cinematic videography'],
+      },
+      {
+        name: 'Ganga Aarti',
+        services: ['Priest and ritual coordination', 'Venue setup (riverfront or themed setup)', 'Diyas, flowers, and décor', 'Sound system for chants', 'Guest seating arrangements', 'Photography and videography'],
       },
       {
         name: 'Jai Mala / Varmala',
@@ -164,7 +160,10 @@ export const ALL_SERVICES = [
         name: 'Wedding House Décor',
         services: ['Entrance decoration', 'Interior room styling', 'Lighting setup (fairy lights, diyas)', 'Floral arrangements', 'Customized signage and elements'],
       },
-     
+      {
+        name: 'Reception',
+        services: ['Stage and backdrop design', 'Elegant décor themes', 'Live entertainment (band/DJ)', 'Catering (premium menu)', 'Guest welcome and management', 'Photography and videography'],
+      },
       {
         name: 'Pag Phera',
         services: ['Intimate home setup', 'Minimal décor', 'Ritual coordination', 'Catering (light meals)', 'Photography (optional)'],
