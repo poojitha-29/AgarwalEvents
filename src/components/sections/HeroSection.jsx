@@ -106,7 +106,7 @@ export function HeroSection() {
 
           {/* Location */}
           <p className="font-lato text-sm md:text-base text-white/70 tracking-widest mb-8">
-            Serving Hyderabad · Telangana · Pune
+            Serving All over India
           </p>
 
           {/* Buttons */}
