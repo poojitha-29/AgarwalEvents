@@ -1,6 +1,5 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
 import { Toaster } from 'react-hot-toast';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
@@ -8,7 +7,8 @@ import { WhatsAppButton } from './components/layout/WhatsAppButton';
 import { PageSpinner } from './components/ui/Spinner';
 import { ProtectedRoute } from './admin/ProtectedRoute';
 
-const Home = lazy(() => import('./pages/Home'));
+import Home from './pages/Home';
+
 const Services = lazy(() => import('./pages/Services'));
 const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
 const Gallery = lazy(() => import('./pages/Gallery'));
@@ -17,6 +17,7 @@ const About = lazy(() => import('./pages/About'));
 const FAQ = lazy(() => import('./pages/FAQ'));
 const Contact = lazy(() => import('./pages/Contact'));
 const BookNow = lazy(() => import('./pages/BookNow'));
+
 const AdminLogin = lazy(() => import('./admin/AdminLogin'));
 const AdminLayout = lazy(() => import('./admin/AdminLayout'));
 const Dashboard = lazy(() => import('./admin/Dashboard'));
@@ -30,6 +31,7 @@ const AdminInquiries = lazy(() => import('./admin/AdminInquiries'));
 function PublicLayout({ children }) {
   const location = useLocation();
   const isAdmin = location.pathname.startsWith('/admin');
+
   if (isAdmin) return children;
 
   return (
@@ -43,8 +45,6 @@ function PublicLayout({ children }) {
 }
 
 export default function App() {
-  const location = useLocation();
-
   return (
     <>
       <Toaster
@@ -66,38 +66,44 @@ export default function App() {
         }}
       />
 
-      <Suspense fallback={<PageSpinner />}>
+      <Suspense
+        fallback={
+          <div className="min-h-screen flex items-center justify-center bg-[#F5F0E8]">
+            <PageSpinner />
+          </div>
+        }
+      >
         <PublicLayout>
-          <AnimatePresence mode="wait">
-            <Routes location={location} key={location.pathname}>
-              <Route path="/" element={<Home />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/services/:slug" element={<ServiceDetail />} />
-              <Route path="/gallery" element={<Gallery />} />
-              <Route path="/reviews" element={<Reviews />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/book" element={<BookNow />} />
-              <Route path="/admin/login" element={<AdminLogin />} />
-              <Route
-                path="/admin"
-                element={
-                  <ProtectedRoute>
-                    <AdminLayout />
-                  </ProtectedRoute>
-                }
-              >
-                <Route index element={<Dashboard />} />
-                <Route path="services" element={<AdminServices />} />
-                <Route path="gallery" element={<AdminGallery />} />
-                <Route path="packages" element={<AdminPackages />} />
-                <Route path="testimonials" element={<AdminTestimonials />} />
-                <Route path="faqs" element={<AdminFaqs />} />
-                <Route path="inquiries" element={<AdminInquiries />} />
-              </Route>
-            </Routes>
-          </AnimatePresence>
+          {/* ✅ Removed AnimatePresence for performance */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/:slug" element={<ServiceDetail />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/reviews" element={<Reviews />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/book" element={<BookNow />} />
+            <Route path="/admin/login" element={<AdminLogin />} />
+
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute>
+                  <AdminLayout />
+                </ProtectedRoute>
+              }
+            >
+              <Route index element={<Dashboard />} />
+              <Route path="services" element={<AdminServices />} />
+              <Route path="gallery" element={<AdminGallery />} />
+              <Route path="packages" element={<AdminPackages />} />
+              <Route path="testimonials" element={<AdminTestimonials />} />
+              <Route path="faqs" element={<AdminFaqs />} />
+              <Route path="inquiries" element={<AdminInquiries />} />
+            </Route>
+          </Routes>
         </PublicLayout>
       </Suspense>
     </>

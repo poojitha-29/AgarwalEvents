@@ -11,7 +11,7 @@ const WHY_ICONS = [Palette, Target, Layers, PiggyBank, Handshake, Users];
 
 const IMAGES = {
   hero: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1200&q=80',
-  left: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80',
+  left: 'https://plus.unsplash.com/premium_photo-1682092597591-81f59c80d9ec?q=80',
   right: 'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=80',
   bottom: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&q=80',
 };

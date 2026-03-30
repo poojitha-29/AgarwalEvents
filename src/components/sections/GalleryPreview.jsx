@@ -5,12 +5,14 @@ import 'yet-another-react-lightbox/styles.css';
 import { getFeaturedGallery } from '../../services/galleryService';
 import { FadeInUp } from '../ui/FadeInUp';
 import { Button } from '../ui/Button';
+import { getOptimizedUrl } from '../../lib/cloudinary'; // ✅ IMPORTANT
 
 const FALLBACK = [
   { id: 'f1', image_url: 'https://res.cloudinary.com/dbq4mjfk6/image/upload/v1774352924/agarwal-events/gallery/ticwict7iqbwwcoifkqx.jpg', caption: 'Wedding', category: 'Weddings' },
   { id: 'f2', image_url: 'https://res.cloudinary.com/dbq4mjfk6/image/upload/v1774352922/agarwal-events/gallery/rt2vk750rg7hmwg7znty.jpg', caption: 'Mehendi', category: 'Mehendi' },
   { id: 'f3', image_url: 'https://res.cloudinary.com/dbq4mjfk6/image/upload/v1774352918/agarwal-events/gallery/xid9sgi55cfcjphqw2ev.jpg', caption: 'Haldi', category: 'Haldi' },
-  { id: 'f4', image_url: 'https://res.cloudinary.com/dbq4mjfk6/image/upload/v1774352921/agarwal-events/gallery/bm7kvfnzg9karoy4lqw8.jpg', caption: 'Haldi', category: 'Haldi' },]
+  { id: 'f4', image_url: 'https://res.cloudinary.com/dbq4mjfk6/image/upload/v1774352921/agarwal-events/gallery/bm7kvfnzg9karoy4lqw8.jpg', caption: 'Haldi', category: 'Haldi' },
+];
 
 export function GalleryPreview() {
   const [images, setImages] = useState(FALLBACK);
@@ -25,10 +27,13 @@ export function GalleryPreview() {
   return (
     <section className="section-padding bg-beige-100">
       <div className="container-custom">
+
         <FadeInUp>
           <div className="text-center mb-10">
             <p className="font-vibes text-2xl text-gold-500 mb-2">Our Portfolio</p>
-            <h2 className="font-cormorant text-3xl md:text-4xl font-bold text-maroon-700 mb-4">Event Gallery</h2>
+            <h2 className="font-cormorant text-3xl md:text-4xl font-bold text-maroon-700 mb-4">
+              Event Gallery
+            </h2>
             <div className="w-16 h-0.5 bg-gold-500 mx-auto" />
           </div>
         </FadeInUp>
@@ -42,10 +47,10 @@ export function GalleryPreview() {
                 onClick={() => setLightboxIndex(i)}
               >
                 <img
-                  src={img.image_url}
+                  src={getOptimizedUrl(img.image_url, { width: 400 })} // ✅ FIXED
                   alt={img.caption || 'Event photo'}
-                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
             ))}
@@ -60,11 +65,15 @@ export function GalleryPreview() {
           </div>
         </FadeInUp>
 
+        {/* ✅ Optimized Lightbox */}
         <Lightbox
           open={lightboxIndex >= 0}
           close={() => setLightboxIndex(-1)}
           index={lightboxIndex}
-          slides={images.map((img) => ({ src: img.image_url, alt: img.caption }))}
+          slides={images.map((img) => ({
+            src: getOptimizedUrl(img.image_url, { width: 800 }), // ✅ FIXED
+            alt: img.caption
+          }))}
         />
       </div>
     </section>

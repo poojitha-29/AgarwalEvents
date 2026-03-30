@@ -4,10 +4,11 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { Button } from '../ui/Button';
 
+// ✅ Optimized images (reduced size)
 const HERO_IMAGES = [
-  'https://images.unsplash.com/photo-1741206444919-26a9e8f04cc5',
-  'https://images.unsplash.com/photo-1735052712464-9d24b69be5f5?q=80&w=687',
-  'https://images.unsplash.com/photo-1587271636175-90d58cdad458?w=1920&q=80',
+  'https://images.unsplash.com/photo-1741206444919-26a9e8f04cc5?q=60&w=1200',
+  'https://images.unsplash.com/photo-1735052712464-9d24b69be5f5?q=60&w=1200',
+  'https://images.unsplash.com/photo-1587271636175-90d58cdad458?q=60&w=1200',
 ];
 
 function RosePetal({ index }) {
@@ -54,12 +55,13 @@ export function HeroSection() {
   return (
     <section className="relative h-screen overflow-hidden">
 
-      {/* ✅ Crossfade Image Layers (NO BLANK) */}
+      {/* ✅ Optimized Crossfade Images */}
       {HERO_IMAGES.map((img, i) => (
         <motion.img
           key={i}
           src={img}
           alt="wedding"
+          loading={i === index ? "eager" : "lazy"} // ✅ important
           className="absolute inset-0 w-full h-[120%] object-cover"
           style={{ y: bgY }}
           initial={false}
@@ -71,17 +73,17 @@ export function HeroSection() {
         />
       ))}
 
-      {/* Cinematic Overlay */}
+      {/* Overlay */}
       <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/50 via-black/20 to-black/70" />
 
-      {/* Soft Blur */}
+      {/* Blur */}
       <div className="absolute inset-0 backdrop-blur-[2px] z-[1]" />
 
       {/* Top Gradient */}
       <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-maroon-900/90 to-transparent z-10" />
 
-      {/* Rose Petals */}
-      {Array.from({ length: 12 }).map((_, i) => (
+      {/* ✅ Reduced petals (performance fix) */}
+      {Array.from({ length: 6 }).map((_, i) => (
         <RosePetal key={i} index={i} />
       ))}
 
@@ -89,27 +91,22 @@ export function HeroSection() {
       <div className="relative z-10 h-full flex items-center justify-center text-center px-4">
         <div>
 
-          {/* Tagline */}
           <p className="font-vibes text-3xl md:text-5xl text-gold-400 mb-4 drop-shadow-[0_0_12px_rgba(255,215,0,0.6)]">
             Making Your Dreams Come True
           </p>
 
-          {/* Main Heading */}
           <h1 className="font-cinzel font-bold text-3xl md:text-5xl lg:text-6xl text-white tracking-wider mb-4 uppercase drop-shadow-[0_6px_25px_rgba(0,0,0,0.9)]">
             Agarwal Events &<br />Wedding Planners
           </h1>
 
-          {/* Subtitle */}
           <p className="font-cormorant text-xl md:text-2xl text-white/90 mb-2 drop-shadow">
             Luxury Wedding & Event Planning
           </p>
 
-          {/* Location */}
           <p className="font-lato text-sm md:text-base text-white/70 tracking-widest mb-8">
             Serving All over India
           </p>
 
-          {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link to="/services">
               <Button variant="primary" size="lg">
@@ -126,7 +123,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll Icon */}
+      {/* Scroll icon */}
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
         animate={{ y: [0, 12, 0] }}
