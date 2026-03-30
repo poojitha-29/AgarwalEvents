@@ -14,7 +14,7 @@ export const CONTACT = {
   linkedin: 'https://www.linkedin.com/in/aewp1234',
 };
 
-export const LOCATIONS = ['Hyderabad', 'Telangana', 'Pune'];
+export const LOCATIONS = ['All India Services Available'];
 
 export const ABOUT_TEXT =
   'Agarwal Events & Wedding Planners are professional event and wedding planners known for crafting unforgettable celebrations with creativity, precision, and personal care. Our team focuses on turning dreams into reality — whether for grand weddings, intimate ceremonies, multicultural celebrations, or special events — by handling everything from conceptual planning to flawless execution.';
@@ -64,7 +64,7 @@ export const ALL_SERVICES = [
   {
     slug: 'weddings',
     name: 'Weddings',
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1654157085616-cd80ec5fca2f',
     description: 'From intimate ceremonies to grand celebrations, we plan and execute every wedding function with perfection — handling décor, catering, entertainment, and coordination end-to-end.',
     subTypes: [
       {
