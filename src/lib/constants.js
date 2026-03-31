@@ -14,7 +14,7 @@ export const CONTACT = {
   linkedin: 'https://www.linkedin.com/in/aewp1234',
 };
 
-export const LOCATIONS = ['All India Services Available'];
+export const LOCATIONS = ['Based out in Hyderabad , All India Services Available'];
 
 export const ABOUT_TEXT =
   'Agarwal Events & Wedding Planners are professional event and wedding planners known for crafting unforgettable celebrations with creativity, precision, and personal care. Our team focuses on turning dreams into reality — whether for grand weddings, intimate ceremonies, multicultural celebrations, or special events — by handling everything from conceptual planning to flawless execution.';
