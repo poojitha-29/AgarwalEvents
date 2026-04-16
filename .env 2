@@ -1,0 +1,8 @@
+# Supabase — get from Supabase project Settings > API
+VITE_SUPABASE_URL=https://mcaskmovwdkehreksygq.supabase.co
+VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1jYXNrbW92d2RrZWhyZWtzeWdxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM5MjY2OTYsImV4cCI6MjA4OTUwMjY5Nn0.HutcCSUjoTdm7qg4tTQqVnFgrNaAPR_XLbDsLN8_dxM
+
+# Cloudinary — get from Cloudinary dashboard
+VITE_CLOUDINARY_CLOUD_NAME=dbq4mjfk6
+# Create an unsigned upload preset in Cloudinary Settings > Upload
+VITE_CLOUDINARY_UPLOAD_PRESET=agarwal-events

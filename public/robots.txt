@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Sitemap: https://agarwalevents.com/sitemap.xml
